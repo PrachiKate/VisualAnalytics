@@ -19,7 +19,7 @@ function drawBarChartProduction(localityName) {
     var barWidth1 = chartWidth / (2012 - 1980 + 1);
 
     d3.select("#label")
-        .html(localityName + "Energy Production ");
+        .html(localityName  + "Energy Production ");
 
     // create a y scale
     var yScale = d3.scale.linear()
@@ -96,7 +96,7 @@ function drawBarChartConsumption(localityName) {
 
     // create a group for the bar chart
     d3.select("#label")
-        .html(localityName + " Energy Consumption ");
+        .html(localityName  + " Energy Consumption ");
 
     // create a y scale
     var yScale = d3.scale.linear()
