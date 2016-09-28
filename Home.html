@@ -76,22 +76,14 @@
 
 </head>
 <body onload="parsePrimaryEnergyProduction();">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qUcMxBkXrvI" frameborder="0" allowfullscreen></iframe>
-<iframe src="Interactive Visual Analytics_Project1.pdf"></iframe>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active" id="barChart"><a href="render.html" >Bar Chart</a></li>
-                <li id="lineChart"><a href="LineChart.html" >Line Graph</a></li>
+                <li ><a href="Home.html">Bar Chart</a></li>
+                <li id="lineChart"><a href="LineChart.html">Line Graph</a></li>
             </ul>
         </div>
     </div>
@@ -101,40 +93,19 @@
     <div class="row content">
         <div class="col-sm-2 sidenav">
             <div class="list-group1"  id="productionDiv">
-                <button type="button" onclick="parsePrimaryEnergyProduction();" class="list-group-item">Total Primary Energy</button>
-                <button type="button" onclick="parseTotalElectricityProduction();" class="list-group-item">Total Electricity</button>
-                <button type="button" onclick="parseRenewableElectricityProduction();" class="list-group-item">Renewable Electricity</button>
-                <button type="button" onclick="parseRenewableBiofuelProduction();" class="list-group-item">Renewable Biofuel</button>
-                <button type="button" onclick="parsePetroleumProduction();" class="list-group-item">Petroleum</button>
-                <button type="button" onclick="parseCoalProduction();" class="list-group-item">Coal</button>
-                <button type="button" onclick="parseCo2Emissions();" class="list-group-item">CO2 Emissions per capita</button>
-            </div>
-            <div class="list-group2" id="consumptionDiv" style="display:none" >
-                <button type="button" onclick="parsePrimaryEnergyConsumption();" class="list-group-item">Total Primary Energy</button>
-                <button type="button" onclick="parseTotalElectricityConsumption();" class="list-group-item">Total Electricity</button>
-                <button type="button" onclick="parseRenewableElectricityConsumption();" class="list-group-item">Renewable Electricity</button>
-                <button type="button" onclick="parseRenewableBiofuelConsumption();" class="list-group-item">Renewable Biofuel</button>
-                <button type="button" onclick="parsePetroleumConsumption();" class="list-group-item">Petroleum</button>
-                <button type="button" onclick="parseCoalConsumption();" class="list-group-item">Coal</button>
-                <button type="button" onclick="parseCo2Emissions();" class="list-group-item">CO2 Emissions per capita</button>
-            </div>
-            <div class="list-group3" id="lineChartProductionDiv"  style="display:none" >
-                <button type="button" onclick="parsePrimaryEnergyProductionLineChart();" class="list-group-item">Total Primary Energy</button>
-                <button type="button" onclick="parseTotalElectricityProductionLineChart();" class="list-group-item">Total Electricity</button>
-                <button type="button" onclick="parseRenewableElectricityProductionLineChart();" class="list-group-item">Renewable Electricity</button>
-                <button type="button" onclick="parseRenewableBiofuelProductionLineChart();" class="list-group-item">Renewable Biofuel</button>
-                <button type="button" onclick="parsePetroleumProductionLineChart();" class="list-group-item">Petroleum</button>
-                <button type="button" onclick="parseCoalProductionLineChart();" class="list-group-item">Coal</button>
-                <button type="button" onclick="parseCo2EmissionsLineChart();" class="list-group-item">CO2 Emissions per capita</button>
-            </div>
-            <div class="list-group4" id="lineChartConsumptionDiv" style="display:none" >
-                <button type="button" onclick="parsePrimaryEnergyConsumptionLineChart();" class="list-group-item">Total Primary Energy</button>
-                <button type="button" onclick="parseTotalElectricityConsumptionLineChart();" class="list-group-item">Total Electricity</button>
-                <button type="button" onclick="parseRenewableElectricityConsumptionLineChart();" class="list-group-item">Renewable Electricity</button>
-                <button type="button" onclick="parseRenewableBiofuelConsumptionLineChart();" class="list-group-item">Renewable Biofuel</button>
-                <button type="button" onclick="parsePetroleumConsumptionLineChart();" class="list-group-item">Petroleum</button>
-                <button type="button" onclick="parseCoalConsumptionLineChart();" class="list-group-item">Coal</button>
-                <button type="button" onclick="parseCo2EmissionsLineChart();" class="list-group-item">CO2 Emissions per capita</button>
+                <button type="button" onclick="parsePrimaryEnergyProduction();" class="list-group-item">Total Primary Energy Production</button>
+                <button type="button" onclick="parseTotalElectricityProduction();" class="list-group-item">Total Electricity Production</button>
+                <button type="button" onclick="parseRenewableElectricityProduction();" class="list-group-item">Renewable Electricity Production</button>
+                <button type="button" onclick="parseRenewableBiofuelProduction();" class="list-group-item">Renewable Biofuel Production</button>
+                <button type="button" onclick="parsePetroleumProduction();" class="list-group-item">Petroleum Production</button>
+                <button type="button" onclick="parseCoalProduction();" class="list-group-item">Coal Production</button>
+                <button type="button" onclick="parseCo2Emissions();" class="list-group-item">CO2 Emissions per capita Emission</button>
+                <button type="button" onclick="parsePrimaryEnergyConsumption();" class="list-group-item">Total Primary Energy Consumption</button>
+                <button type="button" onclick="parseTotalElectricityConsumption();" class="list-group-item">Total Electricity Consumption</button>
+                <button type="button" onclick="parseRenewableElectricityConsumption();" class="list-group-item">Renewable Electricity Consumption</button>
+                <button type="button" onclick="parseRenewableBiofuelConsumption();" class="list-group-item">Renewable Biofuel Consumption</button>
+                <button type="button" onclick="parsePetroleumConsumption();" class="list-group-item">Petroleum Consumption</button>
+                <button type="button" onclick="parseCoalConsumption();" class="list-group-item">Coal Consumption</button>
             </div>
             <div>
 
@@ -144,23 +115,13 @@
         </div>
         </div>
         <div class="col-sm-8 text-left">
+            <br>
             <select id="selectionWidget" multiple="multiple" style="position: static; left: 1000px; top: 150px"></select>
-
-           <label ><input id= "prod" type="button"  onclick = "showDiv();" value="Production"></label>
-            <label ><input id= "cons" type="button" onclick = "showDiv1();" value="Consumption"></label>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
             <br>
 
-            <svg id="main" width="1000" height="700">
+            <svg id="main" width="900" height="650" style="background-color: whitesmoke; border: inset ">
                 <text id='label' x='100' y='70'></text>
             </svg>
-            <!--  <svg id="main1" style="position: static; top:500px; left:0 ;" width="1000" height="700">
-                  <text id='label' x='100' y='70'></text>
-              </svg> -->
 
         </div>
 
@@ -178,27 +139,6 @@
 <script src="main.js" charset="utf-8"></script>
 <script src="functions.js" charset="utf-8"></script>
 
-
-
-<script>
-
-    function showDiv() {
-
-        document.getElementById('productionDiv').style.display = 'inline';
-        document.getElementById('consumptionDiv').style.display = 'none';
-
-
-    }
-
-    function showDiv1(){
-
-        document.getElementById('productionDiv').style.display = 'none';
-        document.getElementById('consumptionDiv').style.display = 'inline';
-
-    }
-
-
-</script>
 
 
 </body>
