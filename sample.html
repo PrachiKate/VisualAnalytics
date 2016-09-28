@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project 1 - sample code</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js" charset="utf-8"></script>
+	<script src="main.js" charset="utf-8"></script>
+	<script src="functions.js" charset="utf-8"></script>
+
+	<style>
+    	text { 
+			font-family: Arial; 
+			font-size: 15px;
+		}
+		.axis path, .axis line {
+			fill: none;
+			stroke: black;
+			shape-rendering: crispEdges;
+		}
+		.tick text {
+			fill: black;
+			font-size: 11px;
+		}
+		.button1{
+			background-color: #008CBA; /* Blue */
+			float: left;
+			border: 1px #008CBA;
+			padding: 10px 24px;
+			text-align: center;
+			text-decoration: none;
+			color: White;
+			display: inline-block;
+			font-size: 20px;
+			border-radius: 4px;
+			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+			width: 250px;
+		}
+		.Container{
+			margin: 50px 50px 50px 50px;
+			width: 100%;
+			text-align: center;
+			display: flex;
+			align-items: center;
+
+
+		}
+	</style>
+</head>
+
+<body>
+<div>
+	<div class="Container">
+		<div><button type="button" class="button1" onclick="prodParse(energyType)">Bar Chart</button></div>
+		<div><button type="button" class="button1">Line Chart</button></div>
+		<div><button type="button" class="button1">Scatter Plot</button></div>
+	</div>
+	<div class="btn-group btn-group-vertical">
+		<button type="button"  onclick="prodParse(energyType)">Bar Chart</button>
+		<button type="button" >Line Chart</button>
+		<button type="button" >Scatter Plot</button>
+	</div>
+
+	<select id="localitySelectionWidget" style="position: static; left: 1000px; top: 150px"></select>
+	<select id="energySelectionWidget" style="position: static; left: 1000px; top: 150px">
+		<option value="es1" selected="selected">Total Primary Energy</option>
+		<option value="es2">Total Electricity</option>
+		<option value="es3">Renewable Electricity</option>
+		<option value="es3">Renewable Biofuel</option>
+		<option value="es3">Petroleum</option>
+		<option value="es3">Coal</option>
+		<option value="es3">Energy related CO2 emissions</option>
+	</select>
+	<svg id="main" width="1000" height="700">
+		<text id='label' x='100' y='70'></text>
+	</svg>
+	<svg id="main1" style="position: static; top:500px; left:0 ;" width="1000" height="700">
+		<text id='label' x='100' y='70'></text>
+	</svg>
+
+	<script>
+
+
+
+
+
+
+		/*var fld = document.getElementById("localitySelectionWidget");
+		var values = [];
+		for (var i = 0; i < fld.options.length; i++) {
+			if (fld.options[i].selected) {
+				values.push(fld.options[i].value);
+				console.log("");
+			}
+		}
+		var localityName1 = values[0].value;
+		var localityName2 = values[1].value;*/
+
+
+
+
+					// add the current locality to an index
+					localities[primaryEnergyProductionLocality.name] = primaryEnergyProductionLocality;
+					listOfLocalities.push(primaryEnergyProductionLocality.name);
+
+				// populate selection list
+				d3.select('#localitySelectionWidget').selectAll('option').data(listOfLocalities).enter().append('option')
+						.html(function (d) {
+							return d;
+						})
+						.attr('value', function (d) {
+							return d;
+						});
+				var productionSelection = document.getElementById('localitySelectionWidget');
+				var localityName = productionSelection.options[productionSelection.selectedIndex].value;
+				// make bar chart
+				drawBarChartProduction(localityName);
+				d3.select("#localitySelectionWidget")
+						.on('change', function () {
+							// clear the contents of the chart
+							d3.select("#main").selectAll('g').remove();
+							// figure out the newly selected locality
+							var selection = document.getElementById("localitySelectionWidget");
+							var localityName = selection.options[selection.selectedIndex].value;
+
+							console.log('new locality: ' + localityName);
+
+							// re-draw bar chart for the new locality
+							drawBarChartProduction(localityName);
+
+						})
+
+
+
+
+
+					// add the current locality to an index
+					localities[PrimaryEnergyConsumptionLocality.name] = PrimaryEnergyConsumptionLocality;
+					listOfLocalities.push(PrimaryEnergyConsumptionLocality.name);
+
+				// populate selection list
+				d3.select('#localitySelectionWidget').selectAll('option').data(listOfLocalities).enter().append('option')
+						.html(function (d) {
+							return d;
+						})
+						.attr('value', function (d) {
+							return d;
+						})
+				var consumptionSelection = document.getElementById('localitySelectionWidget');
+				var localityName = consumptionSelection.options[consumptionSelection.selectedIndex].value;
+				// make bar chart
+				drawBarChartonsumption(localityName);
+
+				d3.select("#localitySelectionWidget")
+						.on('change', function () {
+
+							// clear the contents of the chart
+							d3.select("#main1").selectAll('g').remove();
+
+							// figure out the newly selected locality
+							var selection = document.getElementById("localitySelectionWidget");
+							var localityName = selection.options[selection.selectedIndex].value;
+
+							console.log('new locality: ' + localityName);
+
+							// re-draw bar chart for the new locality
+							drawBarChartConsumption(localityName);
+						})
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+	</div>
+</body>
+
+
+</html>
